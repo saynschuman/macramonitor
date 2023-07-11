@@ -1,14 +1,19 @@
 const Menuitems = [
   {
     navlabel: true,
-    subheader: 'Starter',
+    subheader: 'Menu',
     icon: 'mdi mdi-dots-horizontal',
     href: 'Dashboard',
   },
   {
-    title: 'Starter Page',
+    title: 'Home',
+    icon: 'home',
+    href: '/dashboard',
+  },
+  {
+    title: 'Admin',
     icon: 'pie-chart',
-    href: '/dashboards/starter',
+    href: '/admin',
   },
 ];
 

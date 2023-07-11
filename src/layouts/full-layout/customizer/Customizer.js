@@ -29,7 +29,7 @@ const Customizer = () => {
     },
     {
       id: 2,
-      bgColor: '#00cec3',
+      bgColor: '#47958e',
       disp: 'GREEN_THEME',
     },
     {

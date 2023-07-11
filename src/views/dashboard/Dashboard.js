@@ -1,7 +1,5 @@
 import React from 'react';
-import { Grid, Button, Box, Card, CardContent, Typography } from '@mui/material';
-import FeatherIcon from 'feather-icons-react';
-import { NavLink } from 'react-router-dom';
+import { Grid, Card, CardContent, Typography } from '@mui/material';
 
 import ThemeSelect from './ThemeSelect';
 
@@ -11,24 +9,10 @@ import PageContainer from '../../components/container/PageContainer';
 const Dashboard1 = () => (
   // 2
 
-  <PageContainer title="Starter Page" description="this is Starter Page">
+  <PageContainer title="Dashboard" description="this is Dashboard">
     {/* breadcrumb */}
-    <Breadcrumb title="Starter Page" subtitle="Welcome Johnathan">
+    <Breadcrumb title="Dashboard" subtitle="Home">
       <ThemeSelect />
-      <Button
-        to="/user-profile"
-        component={NavLink}
-        sx={{
-          ml: 1,
-        }}
-        variant="contained"
-        color="primary"
-      >
-        <FeatherIcon icon="user" width="18" height="18" />
-        <Box fontWeight="400" sx={{ ml: 1 }}>
-          Profile
-        </Box>
-      </Button>
     </Breadcrumb>
     {/* end breadcrumb */}
     <Grid container spacing={0}>

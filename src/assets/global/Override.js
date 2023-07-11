@@ -64,7 +64,7 @@ const components = {
   MuiListItem: {
     styleOverrides: {
       root: {
-        borderRadius: '9px',
+        borderRadius: '4px',
       },
     },
   },

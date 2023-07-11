@@ -18,8 +18,8 @@ const Router = [
     path: '/',
     element: <FullLayout />,
     children: [
-      { path: '/', element: <Navigate to="/dashboards/starter" /> },
-      { path: '/dashboards/starter', exact: true, element: <Dashboard /> },
+      { path: '/', element: <Navigate to="/dashboard" /> },
+      { path: '/dashboard', exact: true, element: <Dashboard /> },
       { path: '*', element: <Navigate to="/auth/404" /> },
     ],
   },
