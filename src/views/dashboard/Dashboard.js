@@ -1,8 +1,6 @@
 import React from 'react';
 import { Grid, Card, CardContent, Typography } from '@mui/material';
 
-import ThemeSelect from './ThemeSelect';
-
 import Breadcrumb from '../../layouts/full-layout/breadcrumb/Breadcrumb';
 import PageContainer from '../../components/container/PageContainer';
 
@@ -11,9 +9,7 @@ const Dashboard1 = () => (
 
   <PageContainer title="Dashboard" description="this is Dashboard">
     {/* breadcrumb */}
-    <Breadcrumb title="Dashboard" subtitle="Home">
-      <ThemeSelect />
-    </Breadcrumb>
+    <Breadcrumb title="Dashboard" subtitle="Home" />
     {/* end breadcrumb */}
     <Grid container spacing={0}>
       {/* ------------------------- row 1 ------------------------- */}

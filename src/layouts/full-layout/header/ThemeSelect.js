@@ -32,9 +32,9 @@ const ThemeSelect = () => {
       onChange={handleChange}
       input={<BootstrapInput />}
     >
-      <MenuItem value={10}>March 2021</MenuItem>
-      <MenuItem value={20}>April 2021</MenuItem>
-      <MenuItem value={30}>May 2021</MenuItem>
+      <MenuItem value={10}>2021</MenuItem>
+      <MenuItem value={20}>2021</MenuItem>
+      <MenuItem value={30}>2021</MenuItem>
     </Select>
   );
 };

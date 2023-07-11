@@ -14,6 +14,7 @@ import {
   Drawer,
 } from '@mui/material';
 import PropTypes from 'prop-types';
+import ThemeSelect from './ThemeSelect';
 // Dropdown Component
 import NotificationDropdown from './NotificationDropdown';
 import CustomTextField from '../../../components/forms/custom-elements/CustomTextField';
@@ -209,6 +210,9 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
         {/* ------------------------------------------- */}
         {/* End Notifications Dropdown */}
         {/* ------------------------------------------- */}
+        <Box sx={{ ml: 1 }}>
+          <ThemeSelect />
+        </Box>
       </Toolbar>
     </AppBar>
   );
