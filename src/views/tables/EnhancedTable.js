@@ -21,7 +21,6 @@ import {
   Typography,
   Avatar,
 } from '@mui/material';
-import { visuallyHidden } from '@mui/utils';
 import FeatherIcon from 'feather-icons-react';
 import CustomCheckbox from '../../components/forms/custom-elements/CustomCheckbox';
 import CustomSwitch from '../../components/forms/custom-elements/CustomSwitch';
@@ -346,11 +345,6 @@ function EnhancedTableHead(props) {
               <Typography variant="subtitle1" fontWeight="500">
                 {headCell.label}
               </Typography>
-              {orderBy === headCell.id ? (
-                <Box component="span" sx={visuallyHidden}>
-                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                </Box>
-              ) : null}
             </TableSortLabel>
           </TableCell>
         ))}
@@ -414,10 +408,6 @@ EnhancedTableToolbar.propTypes = {
 };
 
 const BCrumb = [
-  {
-    to: '/',
-    title: 'Home',
-  },
   {
     title: 'Enhanced Table',
   },
@@ -485,9 +475,9 @@ const EnhancedTable = () => {
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
-    <PageContainer title="Enhanced Table" description="this is Enhanced Table page">
+    <PageContainer title="Health Systems" description="this is Enhanced Table page">
       {/* breadcrumb */}
-      <Breadcrumb title="Enhanced Table" items={BCrumb} />
+      <Breadcrumb title="Admin" items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
         <CardContent>
