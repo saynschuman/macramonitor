@@ -5,7 +5,7 @@ import Chart from 'react-apexcharts';
 import FeatherIcon from 'feather-icons-react';
 import DashboardCard from '../../../components/base-card/DashboardCard';
 
-const SalesOverview = () => {
+const Overview = () => {
   const theme = useTheme();
   const primary = theme.palette.primary.main;
   const secondary = theme.palette.secondary.main;
@@ -88,7 +88,7 @@ const SalesOverview = () => {
   ];
   return (
     <DashboardCard
-      title="Sales Overview"
+      title="Activity Overview"
       subtitle="Ample Admin Vs Pixel Admin"
       customdisplay="block"
       action={
@@ -150,4 +150,4 @@ const SalesOverview = () => {
   );
 };
 
-export default SalesOverview;
+export default Overview;

@@ -4,7 +4,7 @@ import Chart from 'react-apexcharts';
 import FeatherIcon from 'feather-icons-react';
 import { useTheme } from '@mui/material/styles';
 
-const MonthlySales = () => {
+const UserActivity = () => {
   const theme = useTheme();
   const primary = theme.palette.primary.main;
 
@@ -50,7 +50,7 @@ const MonthlySales = () => {
   };
   const seriesmonthlychart = [
     {
-      name: 'Monthly Sales',
+      name: 'User activity',
       data: [35, 60, 30, 55, 40],
     },
   ];
@@ -78,7 +78,7 @@ const MonthlySales = () => {
               }}
               gutterBottom
             >
-              Monthly Sales
+              User Activity
             </Typography>
             <Typography
               variant="h2"
@@ -116,4 +116,4 @@ const MonthlySales = () => {
   );
 };
 
-export default MonthlySales;
+export default UserActivity;

@@ -4,8 +4,8 @@ import {
   WelcomeCard,
   BlogCard,
   Earnings,
-  MonthlySales,
-  SalesOverview,
+  UserActivity,
+  Overview,
   WeeklyStats,
   DailyActivities,
 } from './dashboard1-components';
@@ -25,12 +25,12 @@ const Dashboard1 = () => (
             <Earnings />
           </Grid>
           <Grid item xs={12} lg={6} sm={6}>
-            <MonthlySales />
+            <UserActivity />
           </Grid>
         </Grid>
       </Grid>
       <Grid item xs={12} lg={6}>
-        <SalesOverview />
+        <Overview />
       </Grid>
       
       {/* ------------------------- row 2 ------------------------- */}
