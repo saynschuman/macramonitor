@@ -10,7 +10,7 @@ const BlankLayout = Loadable(lazy(() => import('../layouts/blank-layout/BlankLay
 const Error = Loadable(lazy(() => import('../views/authentication/Error')));
 
 /* ****Pages***** */
-const Dashboard = Loadable(lazy(() => import('../views/dashboard/Dashboard')));
+const Dashboard = Loadable(lazy(() => import('../views/dashboard/Dashboard1')));
 const Admin = Loadable(lazy(() => import('../views/admin/AdminPage')));
 /* ****Routes***** */
 
