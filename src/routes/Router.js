@@ -11,7 +11,7 @@ const Error = Loadable(lazy(() => import('../views/authentication/Error')));
 
 /* ****Pages***** */
 const Dashboard = Loadable(lazy(() => import('../views/dashboard/Dashboard')));
-const Table = Loadable(lazy(() => import('../views/tables/BasicTable')));
+const Admin = Loadable(lazy(() => import('../views/admin/AdminPage')));
 /* ****Routes***** */
 
 const Router = [
@@ -29,7 +29,7 @@ const Router = [
     element: <FullLayout />,
     children: [
       { path: '/', element: <Navigate to="/admin" /> },
-      { path: '/admin', exact: true, element: <Table /> },
+      { path: '/admin', exact: true, element: <Admin /> },
       { path: '*', element: <Navigate to="/auth/404" /> },
     ],
   },

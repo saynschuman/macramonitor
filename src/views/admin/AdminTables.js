@@ -139,7 +139,7 @@ const a11yProps = (index) => {
   };
 };
 
-const ProductDesc = () => {
+const AdminTables = () => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -404,4 +404,4 @@ const ProductDesc = () => {
   );
 };
 
-export default ProductDesc;
+export default AdminTables;

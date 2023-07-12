@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import Sidebar from './sidebar/Sidebar';
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import Customizer from './customizer/Customizer';
+// import Customizer from './customizer/Customizer';
 import { TopbarHeight } from '../../assets/global/Theme-variable';
 
 const MainWrapper = experimentalStyled('div')(() => ({
@@ -62,7 +62,7 @@ const FullLayout = () => {
           <Box sx={{ minHeight: 'calc(100vh - 170px)' }}>
             <Outlet />
           </Box>
-          <Customizer />
+          {/* <Customizer /> */}
           <Footer />
         </Container>
       </PageWrapper>
