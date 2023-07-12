@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import FeatherIcon from 'feather-icons-react';
+
 import {
   AppBar,
   Badge,
   Box,
-  IconButton,
-  Toolbar,
-  Menu,
-  Typography,
-  Chip,
   Button,
+  Chip,
   Drawer,
+  IconButton,
+  Menu,
+  Toolbar,
+  Typography,
 } from '@mui/material';
+
+import FeatherIcon from 'feather-icons-react';
 import PropTypes from 'prop-types';
-import ThemeSelect from './ThemeSelect';
+
+import CustomTextField from '../../../components/forms/custom-elements/CustomTextField';
 // Dropdown Component
 import NotificationDropdown from './NotificationDropdown';
-import CustomTextField from '../../../components/forms/custom-elements/CustomTextField';
+import ThemeSelect from './ThemeSelect';
 
 const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -121,6 +124,9 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
         {/* ------------ End Menu icon ------------- */}
 
         <Box flexGrow={1} />
+        <Box sx={{ mr: 1 }}>
+          <ThemeSelect />
+        </Box>
         {/* ------------------------------------------- */}
         {/* Notifications Dropdown */}
         {/* ------------------------------------------- */}
@@ -210,9 +216,15 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
         {/* ------------------------------------------- */}
         {/* End Notifications Dropdown */}
         {/* ------------------------------------------- */}
-        <Box sx={{ ml: 1 }}>
-          <ThemeSelect />
-        </Box>
+        <IconButton
+          size="large"
+          aria-label="menu"
+          color="inherit"
+          aria-controls="notification-menu"
+          aria-haspopup="true"
+        >
+          <FeatherIcon icon="log-out" width="20" height="20" />
+        </IconButton>
       </Toolbar>
     </AppBar>
   );

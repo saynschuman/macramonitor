@@ -33,8 +33,8 @@ const ThemeSelect = () => {
       input={<BootstrapInput />}
     >
       <MenuItem value={10}>2021</MenuItem>
-      <MenuItem value={20}>2021</MenuItem>
-      <MenuItem value={30}>2021</MenuItem>
+      <MenuItem value={20}>2022</MenuItem>
+      <MenuItem value={30}>2023</MenuItem>
     </Select>
   );
 };
