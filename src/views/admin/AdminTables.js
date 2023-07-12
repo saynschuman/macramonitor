@@ -1,6 +1,23 @@
 import React from 'react';
+
+import {
+  Avatar,
+  Box,
+  Card,
+  CardContent,
+  Chip,
+  Tab,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Tabs,
+  Typography,
+} from '@mui/material';
+
 import PropTypes from 'prop-types';
-import { Box, Typography, Card, CardContent, Tabs, Tab, Table, TableHead, TableRow, Avatar, TableCell, TableBody, Chip } from '@mui/material';
+
 import img1 from '../../assets/images/users/1.jpg';
 import img2 from '../../assets/images/users/2.jpg';
 import img3 from '../../assets/images/users/3.jpg';
