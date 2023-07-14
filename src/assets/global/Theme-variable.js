@@ -120,13 +120,13 @@ const themesOptions = [
     name: GREEN_THEME,
     palette: {
       primary: {
-        main: '#008F53',
+        main: '#457e22',
         light: '#d7f8f6',
-        dark: '#017142',
+        dark: '#000',
         contrastText: '#ffffff',
       },
       secondary: {
-        main: '#72B95A',
+        main: '#457e22',
       },
     },
   },
