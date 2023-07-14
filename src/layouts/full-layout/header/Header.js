@@ -21,6 +21,7 @@ import CustomTextField from '../../../components/forms/custom-elements/CustomTex
 // Dropdown Component
 import NotificationDropdown from './NotificationDropdown';
 import ThemeSelect from './ThemeSelect';
+import TreeSelect from './TreeSelect';
 
 const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -126,6 +127,9 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
         <Box flexGrow={1} />
         <Box sx={{ mr: 1 }}>
           <ThemeSelect />
+        </Box>
+        <Box>
+          <TreeSelect />
         </Box>
         {/* ------------------------------------------- */}
         {/* Notifications Dropdown */}
