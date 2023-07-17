@@ -5,7 +5,7 @@ import { Navbar } from './layout/Navbar';
 import { AdminHeader } from './layout/AdminHeader';
 
 export default function DashboardLayout() {
-  const [opened, setOpened] = useState(false);
+  const [opened, setOpened] = useState(true);
 
   return (
     <AppShell
@@ -15,15 +15,25 @@ export default function DashboardLayout() {
           backgroundColor: theme.colors.gray[0],
         },
       })}
-      navbar={<Navbar data={navLinks} hidden={!opened} />}
+      navbar={
+        opened ? (
+          <Navbar
+            data={navLinks}
+            hidden={!opened}
+            burger={
+              <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+                <Burger opened={false} onClick={() => setOpened((o) => !o)} size="sm" mr="xl" />
+              </MediaQuery>
+            }
+          />
+        ) : (
+          <></>
+        )
+      }
       navbarOffsetBreakpoint="sm"
       header={
         <AdminHeader
-          burger={
-            <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
-              <Burger opened={opened} onClick={() => setOpened((o) => !o)} size="sm" mr="xl" />
-            </MediaQuery>
-          }
+          burger={<Burger opened={false} onClick={() => setOpened((o) => !o)} size="sm" mr="xl" />}
         />
       }
       footer={

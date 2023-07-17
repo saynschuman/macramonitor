@@ -1,11 +1,4 @@
-import {
-  Group,
-  Image,
-  Navbar as MantineNavbar,
-  ScrollArea,
-  createStyles,
-  rem,
-} from '@mantine/core';
+import { Box, Group, Navbar as MantineNavbar, ScrollArea, createStyles, rem } from '@mantine/core';
 
 import { NavItem } from '../navlinks';
 import logo from '../assets/logo.png';
@@ -13,6 +6,7 @@ import { NavLinksGroup } from './NavLinksGroup';
 
 const useStyles = createStyles((theme) => ({
   navbar: {
+    position: 'absolute',
     backgroundColor: theme.white,
     paddingBottom: 0,
     boxShadow: 'rgba(113, 122, 131, 0.11) 0px 7px 30px 0px',
@@ -32,9 +26,10 @@ const useStyles = createStyles((theme) => ({
 interface Props {
   data: NavItem[];
   hidden?: boolean;
+  burger?: React.ReactNode;
 }
 
-export function Navbar({ data, hidden }: Props) {
+export function Navbar({ data, hidden, burger }: Props) {
   const { classes } = useStyles();
   const links = data.map((item) => <NavLinksGroup key={item.label} {...item} />);
 
@@ -48,6 +43,7 @@ export function Navbar({ data, hidden }: Props) {
       withBorder={false}
       className={classes.navbar}
     >
+      <Box sx={{ position: 'absolute', right: 0, top: 24 }}>{burger && burger}</Box>
       <MantineNavbar.Section>
         <Group position="apart" h={rem(40)}>
           <img width={200} src={logo} alt="logo" />
