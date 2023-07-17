@@ -1,17 +1,40 @@
-import { MantineProvider } from '@mantine/core';
-import { HeaderTabs } from './HeaderTabs';
+import { AppShell, Burger, Container, Footer, MediaQuery, Text } from '@mantine/core';
+import { useState } from 'react';
+import { navLinks } from './navlinks';
+import { Navbar } from './layout/Navbar';
+import { AdminHeader } from './layout/AdminHeader';
 
-export default function App() {
+export default function DashboardLayout() {
+  const [opened, setOpened] = useState(false);
+
   return (
-    <MantineProvider withGlobalStyles withNormalizeCSS theme={{ primaryColor: 'teal' }}>
-      <HeaderTabs
-        tabs={['Financial', 'PI', 'Quality', 'CPIA', 'Data', 'Action Items', 'Submission', 'Admin']}
-        links={[
-          { label: 'About', link: '1' },
-          { label: 'MacraGrur', link: '2' },
-          { label: 'Logout', link: '3' },
-        ]}
-      />
-    </MantineProvider>
+    <AppShell
+      layout="alt"
+      sx={(theme) => ({
+        main: {
+          backgroundColor: theme.colors.gray[0],
+        },
+      })}
+      navbar={<Navbar data={navLinks} hidden={!opened} />}
+      navbarOffsetBreakpoint="sm"
+      header={
+        <AdminHeader
+          burger={
+            <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+              <Burger opened={opened} onClick={() => setOpened((o) => !o)} size="sm" mr="xl" />
+            </MediaQuery>
+          }
+        />
+      }
+      footer={
+        <Footer height={50} p="md">
+          <Text w="full" size="sm" align="center" color="gray">
+            © 2023
+          </Text>
+        </Footer>
+      }
+    >
+      <Container fluid>hello</Container>
+    </AppShell>
   );
 }
