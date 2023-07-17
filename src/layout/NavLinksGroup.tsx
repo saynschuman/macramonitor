@@ -15,45 +15,19 @@ const useStyles = createStyles((theme) => ({
     fontSize: theme.fontSizes.sm,
     textDecoration: 'none',
 
-    // '&:hover': {
-    //   backgroundColor: theme.colors.green[0],
-    //   color: theme.colors.green,
-    // },
+    '&:hover': {
+      backgroundColor: theme.colors.green[0],
+      color: theme.colors.green[8],
+    },
   },
 
   activeControl: {
-    // backgroundColor: theme.colors.green[7],
-    // color: '#fff',
-    // '&:hover': {
-    //   backgroundColor: theme.colors.green[6],
-    //   color: '#fff',
-    // },
-  },
-
-  link: {
-    fontWeight: 500,
-    display: 'block',
-    textDecoration: 'none',
-    padding: `${theme.spacing.xs} ${theme.spacing.md}`,
-    paddingLeft: rem(31),
-    marginLeft: rem(30),
-    fontSize: theme.fontSizes.sm,
-    color: theme.colors.gray[7],
-    borderLeft: `${rem(1)} solid ${theme.colors.green[3]}`,
-
-    // '&:hover': {
-    //   backgroundColor: theme.colors.green[0],
-    //   color: theme.colors.green,
-    // },
-  },
-
-  activeLink: {
-    // backgroundColor: theme.colors.green[7],
-    // color: '#fff',
-    // '&:hover': {
-    //   backgroundColor: theme.colors.green[6],
-    //   color: '#fff !important',
-    // },
+    backgroundColor: theme.colors.green[0],
+    color: theme.colors.green[6],
+    '&:hover': {
+      backgroundColor: theme.colors.green[0],
+      color: theme.colors.green[8],
+    },
   },
 
   chevron: {
