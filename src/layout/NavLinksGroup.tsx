@@ -15,19 +15,19 @@ const useStyles = createStyles((theme) => ({
     fontSize: theme.fontSizes.sm,
     textDecoration: 'none',
 
-    '&:hover': {
-      backgroundColor: theme.colors.green[0],
-      color: theme.colors.green,
-    },
+    // '&:hover': {
+    //   backgroundColor: theme.colors.green[0],
+    //   color: theme.colors.green,
+    // },
   },
 
   activeControl: {
-    backgroundColor: theme.colors.green[7],
-    color: '#fff',
-    '&:hover': {
-      backgroundColor: theme.colors.green[6],
-      color: '#fff',
-    },
+    // backgroundColor: theme.colors.green[7],
+    // color: '#fff',
+    // '&:hover': {
+    //   backgroundColor: theme.colors.green[6],
+    //   color: '#fff',
+    // },
   },
 
   link: {
@@ -41,19 +41,19 @@ const useStyles = createStyles((theme) => ({
     color: theme.colors.gray[7],
     borderLeft: `${rem(1)} solid ${theme.colors.green[3]}`,
 
-    '&:hover': {
-      backgroundColor: theme.colors.green[0],
-      color: theme.colors.green,
-    },
+    // '&:hover': {
+    //   backgroundColor: theme.colors.green[0],
+    //   color: theme.colors.green,
+    // },
   },
 
   activeLink: {
-    backgroundColor: theme.colors.green[7],
-    color: '#fff',
-    '&:hover': {
-      backgroundColor: theme.colors.green[6],
-      color: '#fff !important',
-    },
+    // backgroundColor: theme.colors.green[7],
+    // color: '#fff',
+    // '&:hover': {
+    //   backgroundColor: theme.colors.green[6],
+    //   color: '#fff !important',
+    // },
   },
 
   chevron: {
@@ -103,7 +103,7 @@ export function NavLinksGroup({
         >
           <Group position="apart" spacing={0}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <ThemeIcon size={30} color={theme.colors.green[5]}>
+              <ThemeIcon size={30}>
                 <Icon size="1.1rem" />
               </ThemeIcon>
               <Box ml="md">{label}</Box>

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { navLinks } from './navlinks';
 import { Navbar } from './layout/Navbar';
 import { AdminHeader } from './layout/AdminHeader';
+import { DashboardContent } from './components/DashboardContent';
 
 export default function DashboardLayout() {
   const [opened, setOpened] = useState(true);
@@ -44,7 +45,9 @@ export default function DashboardLayout() {
         </Footer>
       }
     >
-      <Container fluid>hello</Container>
+      <Container fluid>
+        <DashboardContent />
+      </Container>
     </AppShell>
   );
 }
