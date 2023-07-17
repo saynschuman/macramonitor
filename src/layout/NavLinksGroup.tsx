@@ -58,11 +58,7 @@ export function NavLinksGroup({
   const ChevronIcon = theme.dir === 'ltr' ? IconChevronRight : IconChevronLeft;
   const items = (hasLinks ? links : []).map((link) => {
     return (
-      <a
-        href={link.link}
-        key={link.label}
-        className={`${classes.link} ${link.link === pathname && classes.activeLink}`}
-      >
+      <a href={link.link} key={link.label} className={`${link.link === pathname}`}>
         {link.label}
       </a>
     );
