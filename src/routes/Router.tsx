@@ -6,8 +6,8 @@ export const Router = [
     element: <DashboardContent />,
   },
   {
-    path: '/admin',
-    element: <>admin</>,
+    path: '/home',
+    element: <>home</>,
   },
   {
     path: '*',
