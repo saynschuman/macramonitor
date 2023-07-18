@@ -1,4 +1,5 @@
 import { DashboardContent } from '../components/DashboardContent';
+import { Table } from '../components/Table';
 
 export const Router = [
   {
@@ -7,7 +8,7 @@ export const Router = [
   },
   {
     path: '/home',
-    element: <>home</>,
+    element: <Table />,
   },
   {
     path: '*',

@@ -14,7 +14,7 @@ export function MultiLevelSelect() {
   };
 
   return (
-    <Box maw={400} mx="auto">
+    <Box maw={400} mx="auto" sx={{ background: opened ? '#fff' : 'transparent' }}>
       <Group position="right" mb={5}>
         <Button variant="outline" onClick={toggle} rightIcon={<IconCaretDown />}>
           {value ?? 'Choose value'}
