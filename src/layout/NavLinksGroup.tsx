@@ -4,6 +4,7 @@ import { Box, Collapse, Group, ThemeIcon, UnstyledButton, createStyles, rem } fr
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
   control: {
@@ -58,17 +59,17 @@ export function NavLinksGroup({
   const ChevronIcon = theme.dir === 'ltr' ? IconChevronRight : IconChevronLeft;
   const items = (hasLinks ? links : []).map((link) => {
     return (
-      <a href={link.link} key={link.label} className={`${link.link === pathname}`}>
+      <Link to={link.link} key={link.label} className={`${link.link === pathname}`}>
         {link.label}
-      </a>
+      </Link>
     );
   });
 
   return (
     <>
       {link ? (
-        <a
-          href={link}
+        <Link
+          to={link}
           className={`${classes.control} ${link === pathname && classes.activeControl}`}
         >
           <Group position="apart" spacing={0}>
@@ -79,7 +80,7 @@ export function NavLinksGroup({
               <Box ml="md">{label}</Box>
             </Box>
           </Group>
-        </a>
+        </Link>
       ) : (
         <UnstyledButton
           onClick={() => {

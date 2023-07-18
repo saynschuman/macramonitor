@@ -3,10 +3,12 @@ import { useState } from 'react';
 import { navLinks } from './navlinks';
 import { Navbar } from './layout/Navbar';
 import { AdminHeader } from './layout/AdminHeader';
-import { DashboardContent } from './components/DashboardContent';
+import { useRoutes } from 'react-router';
+import { Router } from './routes/Router';
 
 export default function DashboardLayout() {
   const [opened, setOpened] = useState(true);
+  const routing = useRoutes(Router);
 
   return (
     <AppShell
@@ -45,9 +47,7 @@ export default function DashboardLayout() {
         </Footer>
       }
     >
-      <Container fluid>
-        <DashboardContent />
-      </Container>
+      <Container fluid>{routing}</Container>
     </AppShell>
   );
 }
