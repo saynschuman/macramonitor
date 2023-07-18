@@ -1,6 +1,7 @@
 import { Paper, Space, Title } from '@mantine/core';
 import { MantineReactTable, MRT_ColumnDef } from 'mantine-react-table';
 import { useMemo } from 'react';
+import { Tabs } from '@mantine/core';
 
 type Person = {
   name: {
@@ -92,11 +93,34 @@ export const Table = () => {
     <Paper withBorder radius="md" p="md">
       <Title order={5}>Simple</Title>
       <Space h="md" />
-      <MantineReactTable
-        columns={columns}
-        data={data}
-        mantinePaperProps={{ shadow: '0', withBorder: false }}
-      />
+      <Tabs defaultValue="first">
+        <Tabs.List>
+          <Tabs.Tab value="first">First tab</Tabs.Tab>
+          <Tabs.Tab value="second">Second tab</Tabs.Tab>
+          <Tabs.Tab value="third">Third tab</Tabs.Tab>
+        </Tabs.List>
+        <Tabs.Panel value="first">
+          <MantineReactTable
+            columns={columns}
+            data={data}
+            mantinePaperProps={{ shadow: '0', withBorder: false }}
+          />
+        </Tabs.Panel>
+        <Tabs.Panel value="second">
+          <MantineReactTable
+            columns={columns}
+            data={data}
+            mantinePaperProps={{ shadow: '0', withBorder: false }}
+          />
+        </Tabs.Panel>
+        <Tabs.Panel value="third">
+          <MantineReactTable
+            columns={columns}
+            data={data}
+            mantinePaperProps={{ shadow: '0', withBorder: false }}
+          />
+        </Tabs.Panel>
+      </Tabs>
     </Paper>
   );
 };
