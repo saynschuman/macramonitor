@@ -1,4 +1,5 @@
 import {
+  ActionIcon,
   Box,
   Button,
   Drawer,
@@ -15,17 +16,19 @@ import {
 import { useForm } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
 import { useState } from 'react';
+import { Person } from './usersMock';
+import { IconEdit } from '@tabler/icons-react';
 
-export const FormDrawer = () => {
+export const FormDrawer = (props: { initial?: Person }) => {
   const [opened, { open, close }] = useDisclosure(false);
   const [value, setValue] = useState(40);
   const [endValue, setEndValue] = useState(40);
   const form = useForm({
     initialValues: {
-      firstName: '',
-      lastName: '',
-      city: '',
-      state: '',
+      firstName: props.initial?.firstName || '',
+      lastName: props.initial?.lastName || '',
+      city: props.initial?.city || '',
+      state: props.initial?.state || '',
     },
   });
 
@@ -121,11 +124,17 @@ export const FormDrawer = () => {
         </Grid>
       </Drawer>
 
-      <Group position="center">
-        <Button variant="outline" onClick={open}>
-          Add New
-        </Button>
-      </Group>
+      {props.initial?.firstName ? (
+        <ActionIcon>
+          <IconEdit size="1.125rem" onClick={open} />
+        </ActionIcon>
+      ) : (
+        <Group position="center">
+          <Button variant="outline" onClick={open}>
+            Add New
+          </Button>
+        </Group>
+      )}
     </>
   );
 };
