@@ -1,7 +1,8 @@
-import { Paper, Space, Title } from '@mantine/core';
+import { Grid, Paper, Space, Title } from '@mantine/core';
 import { MantineReactTable, MRT_ColumnDef } from 'mantine-react-table';
 import { useMemo } from 'react';
 import { Tabs } from '@mantine/core';
+import { FormDrawer } from './FormDrawer';
 
 type Person = {
   name: {
@@ -91,7 +92,10 @@ export const Table = () => {
 
   return (
     <Paper withBorder radius="md" p="md">
-      <Title order={5}>Simple</Title>
+      <Grid justify="space-between">
+        <Title order={5}>Users</Title>
+        <FormDrawer />
+      </Grid>
       <Space h="md" />
       <Tabs defaultValue="first">
         <Tabs.List>
