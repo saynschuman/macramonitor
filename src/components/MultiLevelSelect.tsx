@@ -23,9 +23,32 @@ export function MultiLevelSelect() {
 
       <Collapse in={opened}>
         <Text>
-          <Accordion radius="md">
+          <Accordion radius="md" multiple>
             <Accordion.Item value="1">
               <Accordion.Control>Item 1</Accordion.Control>
+              <Box sx={{ paddingLeft: 10 }}>
+                <Accordion.Panel
+                  sx={{ cursor: 'pointer' }}
+                  onClick={() => selectValue('Sub item 1')}
+                >
+                  Sub item 1
+                </Accordion.Panel>
+                <Accordion.Panel
+                  sx={{ cursor: 'pointer' }}
+                  onClick={() => selectValue('Sub item 2')}
+                >
+                  Sub item 2
+                </Accordion.Panel>
+                <Accordion.Panel
+                  sx={{ cursor: 'pointer' }}
+                  onClick={() => selectValue('Sub item 3')}
+                >
+                  Sub item 3
+                </Accordion.Panel>
+              </Box>
+            </Accordion.Item>
+            <Accordion.Item value="2">
+              <Accordion.Control>Item 2</Accordion.Control>
               <Box sx={{ paddingLeft: 10 }}>
                 <Accordion.Panel
                   sx={{ cursor: 'pointer' }}
