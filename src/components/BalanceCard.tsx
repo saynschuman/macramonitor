@@ -13,7 +13,7 @@ import {
   rem,
 } from '@mantine/core';
 import { IconArrowRight, IconArrowUp } from '@tabler/icons-react';
-import { BalanceChart } from './BalanceChart';
+
 import { useState } from 'react';
 
 const useStyle = createStyles((theme) => ({
@@ -124,7 +124,6 @@ export function BalanceCard() {
       </Card.Section>
       <Card.Section className={classes.section}>
         <BalanceLeftStack />
-        {/* <BalanceChart /> */}
         <BalanceRightStack />
       </Card.Section>
     </Card>
