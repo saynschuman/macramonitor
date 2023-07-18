@@ -14,6 +14,7 @@ import {
 } from '@mantine/core';
 import { IconArrowRight, IconArrowUp } from '@tabler/icons-react';
 import { BalanceChart } from './BalanceChart';
+import { useState } from 'react';
 
 const useStyle = createStyles((theme) => ({
   section: {
@@ -58,11 +59,7 @@ const BalanceLeftStack = () => (
         <Title order={4}>$ 1329.89</Title>
       </Stack>
     </Group>
-    <Button
-      size="sm"
-      w={rem(140)}
-      rightIcon={<IconArrowRight size={14} />}
-    >
+    <Button size="sm" w={rem(140)} rightIcon={<IconArrowRight size={14} />}>
       View more
     </Button>
   </Stack>
@@ -108,15 +105,17 @@ const BalanceRightStack = () => (
 
 export function BalanceCard() {
   const { classes } = useStyle();
+  const [value, setValue] = useState<string>('march');
 
   return (
     <Card radius="md">
       <Card.Section className={classes.section}>
         <Title order={5}>Wallet Balance</Title>
         <Select
-          value="march"
+          value={value}
           size="sm"
           withinPortal
+          onChange={(v) => v && setValue(v)}
           data={[
             { value: 'march', label: 'March' },
             { value: 'april', label: 'April' },
