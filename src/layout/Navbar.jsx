@@ -6,7 +6,7 @@ import logo from '../assets/logo.png';
 
 const useStyles = createStyles((theme) => ({
   navbar: {
-    position: 'absolute',
+    position: 'fixed',
     backgroundColor: theme.white,
     paddingBottom: 0,
     boxShadow: 'rgba(113, 122, 131, 0.11) 0px 7px 30px 0px',

@@ -7,7 +7,7 @@ import { MultiLevelSelect } from '../components/MultiLevelSelect';
 const useStyles = createStyles((theme) => ({
   header: {
     padding: theme.spacing.md,
-    background: 'transparent',
+    background: '#f8f9fa',
     color: theme.black,
     display: 'flex',
     flexDirection: 'row',
