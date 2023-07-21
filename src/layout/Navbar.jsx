@@ -54,7 +54,7 @@ Navbar.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
-      icon: PropTypes.func,
+      icon: PropTypes.shape,
       link: PropTypes.string,
       initiallyOpened: PropTypes.bool,
       links: PropTypes.arrayOf(
