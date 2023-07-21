@@ -4,9 +4,7 @@ import { IconCircleCheck } from '@tabler/icons-react';
 export function WelcomeCard() {
   return (
     <Card radius="md">
-      <Title order={5}>
-        Welcome back!
-      </Title>
+      <Title order={5}>Welcome back!</Title>
       <Text fz="sm" c="dimmed" fw="500">
         Mantine Crypto Dashboard
       </Text>

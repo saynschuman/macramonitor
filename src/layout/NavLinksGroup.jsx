@@ -1,7 +1,6 @@
-'use client';
-
 import { Box, Collapse, Group, ThemeIcon, UnstyledButton, createStyles, rem } from '@mantine/core';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
+import PropTypes from 'prop-types';
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -36,21 +35,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface LinksGroupProps {
-  icon: React.FC<any>;
-  label: string;
-  link?: string;
-  initiallyOpened?: boolean;
-  links?: { label: string; link: string }[];
-}
-
-export function NavLinksGroup({
-  icon: Icon,
-  label,
-  link,
-  initiallyOpened,
-  links,
-}: LinksGroupProps) {
+export function NavLinksGroup({ icon: Icon, label, link, initiallyOpened, links }) {
   const { classes, theme } = useStyles();
   const pathname = window.location.pathname;
 
@@ -115,3 +100,16 @@ export function NavLinksGroup({
     </>
   );
 }
+
+NavLinksGroup.propTypes = {
+  icon: PropTypes.elementType.isRequired,
+  label: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  initiallyOpened: PropTypes.bool,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      link: PropTypes.string,
+    })
+  ),
+};

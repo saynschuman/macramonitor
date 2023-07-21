@@ -1,15 +1,11 @@
-'use client';
-
 import {
   ActionIcon,
   Avatar,
-  Button,
   Card,
   Flex,
   Group,
   Menu,
   Space,
-  Stack,
   Text,
   Title,
   createStyles,
@@ -63,7 +59,7 @@ export function ProfileCard() {
           <Text fz="sm" c="dimmed" fw="500">
             Lorem ipsum
           </Text>
-		  <Text fz="sm" c="dimmed" fw="500">
+          <Text fz="sm" c="dimmed" fw="500">
             Lorem ipsum
           </Text>
         </Flex>

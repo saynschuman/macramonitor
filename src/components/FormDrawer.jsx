@@ -16,10 +16,10 @@ import {
 import { useForm } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
 import { useState } from 'react';
-import { Person } from './usersMock';
 import { IconEdit } from '@tabler/icons-react';
+import PropTypes from 'prop-types';
 
-export const FormDrawer = (props: { initial?: Person }) => {
+export const FormDrawer = (props) => {
   const [opened, { open, close }] = useDisclosure(false);
   const [value, setValue] = useState(40);
   const [endValue, setEndValue] = useState(40);
@@ -137,4 +137,16 @@ export const FormDrawer = (props: { initial?: Person }) => {
       )}
     </>
   );
+};
+
+const PersonPropTypes = {
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired,
+};
+
+FormDrawer.propTypes = {
+  initial: PropTypes.shape(PersonPropTypes),
 };

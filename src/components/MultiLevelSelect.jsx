@@ -4,11 +4,11 @@ import { IconCaretDown } from '@tabler/icons-react';
 import { Accordion } from '@mantine/core';
 import { useState } from 'react';
 
-export function MultiLevelSelect() {
+export const MultiLevelSelect = () => {
   const [opened, { toggle }] = useDisclosure(false);
-  const [value, setValue] = useState<string | null>(null);
+  const [value, setValue] = useState(null);
 
-  const selectValue = (v: string) => {
+  const selectValue = () => {
     setValue(v);
     toggle();
   };
@@ -75,4 +75,4 @@ export function MultiLevelSelect() {
       </Collapse>
     </Box>
   );
-}
+};

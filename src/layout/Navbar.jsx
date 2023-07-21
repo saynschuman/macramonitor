@@ -1,8 +1,8 @@
 import { Box, Group, Navbar as MantineNavbar, ScrollArea, createStyles, rem } from '@mantine/core';
+import PropTypes from 'prop-types';
 
-import { NavItem } from '../navlinks';
-import logo from '../assets/logo.png';
 import { NavLinksGroup } from './NavLinksGroup';
+import logo from '../assets/logo.png';
 
 const useStyles = createStyles((theme) => ({
   navbar: {
@@ -23,13 +23,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface Props {
-  data: NavItem[];
-  hidden?: boolean;
-  burger?: React.ReactNode;
-}
-
-export function Navbar({ data, hidden, burger }: Props) {
+export function Navbar({ data, hidden, burger }) {
   const { classes } = useStyles();
   const links = data.map((item) => <NavLinksGroup key={item.label} {...item} />);
 
@@ -55,3 +49,22 @@ export function Navbar({ data, hidden, burger }: Props) {
     </MantineNavbar>
   );
 }
+
+Navbar.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      icon: PropTypes.func,
+      link: PropTypes.string,
+      initiallyOpened: PropTypes.bool,
+      links: PropTypes.arrayOf(
+        PropTypes.shape({
+          label: PropTypes.string,
+          link: PropTypes.string,
+        })
+      ),
+    })
+  ).isRequired,
+  hidden: PropTypes.bool,
+  burger: PropTypes.node,
+};

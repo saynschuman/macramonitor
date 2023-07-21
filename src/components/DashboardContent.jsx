@@ -1,5 +1,3 @@
-'use client';
-
 import { Flex, Grid } from '@mantine/core';
 import { BalanceCard } from './BalanceCard';
 import { OverviewCard } from './OverviewCard';

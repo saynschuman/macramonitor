@@ -1,12 +1,8 @@
 import { ActionIcon, Box, Grid, Header, Select, createStyles } from '@mantine/core';
-
+import PropTypes from 'prop-types';
 import { IconLogout } from '@tabler/icons-react';
 import { useState } from 'react';
 import { MultiLevelSelect } from '../components/MultiLevelSelect';
-
-interface Props {
-  burger?: React.ReactNode;
-}
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -19,9 +15,9 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function AdminHeader({ burger }: Props) {
+export const AdminHeader = ({ burger }) => {
   const { classes } = useStyles();
-  const [value, setValue] = useState<string>('2021');
+  const [value, setValue] = useState('2021');
 
   return (
     <Header height={60} withBorder={false} className={classes.header}>
@@ -47,4 +43,8 @@ export function AdminHeader({ burger }: Props) {
       </Grid>
     </Header>
   );
-}
+};
+
+AdminHeader.propTypes = {
+  burger: PropTypes.node,
+};

@@ -1,10 +1,10 @@
-import { MRT_ColumnDef, MantineReactTable } from 'mantine-react-table';
+import { MantineReactTable } from 'mantine-react-table';
 import { useMemo } from 'react';
 import { usersMock } from './usersMock';
 import { FormDrawer } from './FormDrawer';
 
 export const UsersTable = () => {
-  const columns = useMemo<MRT_ColumnDef<any>[]>(
+  const columns = useMemo(
     () => [
       {
         accessorKey: 'firstName',

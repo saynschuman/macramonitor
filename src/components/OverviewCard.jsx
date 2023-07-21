@@ -17,7 +17,7 @@ export const options = {
   smooth: true,
   plugins: {
     legend: {
-      position: 'top' as const,
+      position: 'top',
     },
   },
 };

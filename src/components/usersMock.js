@@ -1,12 +1,4 @@
-export type Person = {
-  firstName: string;
-  lastName: string;
-  address: string;
-  city: string;
-  state: string;
-};
-
-export const usersMock: Record<number, Person> = {
+export const usersMock = {
   1: {
     firstName: 'Zachary',
     lastName: 'Davis',

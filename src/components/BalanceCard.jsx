@@ -1,5 +1,3 @@
-'use client';
-
 import {
   Button,
   Card,
@@ -105,7 +103,7 @@ const BalanceRightStack = () => (
 
 export function BalanceCard() {
   const { classes } = useStyle();
-  const [value, setValue] = useState<string>('march');
+  const [value, setValue] = useState('march');
 
   return (
     <Card radius="md">
