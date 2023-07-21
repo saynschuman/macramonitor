@@ -2,19 +2,38 @@ import { Button, Group, Text, Collapse, Box } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconCaretDown } from '@tabler/icons-react';
 import { Accordion } from '@mantine/core';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const MultiLevelSelect = () => {
   const [opened, { toggle }] = useDisclosure(false);
   const [value, setValue] = useState(null);
+  const ref = useRef();
 
-  const selectValue = () => {
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        toggle();
+      }
+    };
+
+    if (opened) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [opened]);
+
+  const selectValue = (v) => {
     setValue(v);
     toggle();
   };
 
   return (
-    <Box maw={400} mx="auto" sx={{ background: opened ? '#fff' : 'transparent' }}>
+    <Box maw={400} mx="auto" sx={{ background: opened ? '#fff' : 'transparent' }} ref={ref}>
       <Group position="right" mb={5}>
         <Button variant="outline" onClick={toggle} rightIcon={<IconCaretDown />}>
           {value ?? 'Choose value'}
