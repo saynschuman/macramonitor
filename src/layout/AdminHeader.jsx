@@ -9,9 +9,17 @@ const useStyles = createStyles((theme) => ({
     padding: theme.spacing.md,
     background: '#f8f9fa',
     color: theme.black,
+  },
+  select: {
+    '@media (max-width: 600px)': {
+      width: '100%',
+    },
+  },
+  grid: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    flexWrap: 'nowrap'
   },
 }));
 
@@ -21,9 +29,10 @@ export const AdminHeader = ({ burger }) => {
 
   return (
     <Header height={60} withBorder={false} className={classes.header}>
-      {burger && burger}
-      <Box sx={{ flex: 1 }} />
-      <Grid align="top">
+      <Grid className={classes.grid}>
+        {burger && burger}
+        <Box sx={{ flex: 1 }} />
+
         <MultiLevelSelect />
         <Select
           ml={10}
