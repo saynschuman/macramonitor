@@ -3,13 +3,18 @@ import { useState } from 'react';
 import { navLinks } from './navlinks';
 import { Navbar } from './layout/Navbar';
 import { AdminHeader } from './layout/AdminHeader';
-import { useRoutes } from 'react-router';
+import { useRoutes, useLocation } from 'react-router';
 import { Router } from './routes/Router';
 
 export default function DashboardLayout() {
   const [opened, setOpened] = useState(true);
   const routing = useRoutes(Router);
 
+  const location = useLocation();
+  if (location.pathname === '/login') {
+    return routing;
+  }
+  
   return (
     <AppShell
       layout="alt"
