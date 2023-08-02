@@ -7,7 +7,7 @@ export const Table = () => {
   return (
     <Paper withBorder radius="md" p="xl">
       <Grid justify="space-between">
-        <Title order={4}>Users</Title>
+        <Title order={3}>Users</Title>
         <FormDrawer />
       </Grid>
       <Space h="md" />
