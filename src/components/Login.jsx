@@ -15,6 +15,30 @@ const useStyle = createStyles((theme) => ({
   title: {
     color: theme.colors.blue[7],
   },
+  form: {
+    flexDirection: 'column',
+    gap: 20,
+    width: '50%',
+    padding: 50,
+    '@media (max-width: 900px)': {
+      padding: 30,
+      width: '100%',
+      maxWidth: 500,
+    },
+  },
+  image: {
+    width: '50%',
+    maxWidth: '812px',
+    '@media (max-width: 900px)': {
+      width: '90%',
+      maxWidth: 500,
+    },
+  },
+  container: {
+    '@media (max-width: 600px)': {
+      flexDirection: 'column',
+    },
+  },
 }));
 
 const Login = () => {
@@ -23,17 +47,11 @@ const Login = () => {
     <Grid
       container
       spacing={0}
+      className={classes.container}
       sx={{ height: '100vh', justifyContent: 'center', alignItems: 'center' }}
     >
-      <img
-        src={img1}
-        alt="bg"
-        style={{
-          width: '50%',
-          maxWidth: '812px',
-        }}
-      />
-      <Grid sx={{ flexDirection: 'column', gap: 20, width: '50%', padding: 50 }}>
+      <img src={img1} alt="bg" className={classes.image} />
+      <Grid className={classes.form}>
         <Title order={2} className={classes.title}>
           Welcome to Macramonitor
         </Title>
