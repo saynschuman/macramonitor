@@ -5,7 +5,7 @@ import { UsersTable } from './UsersTable';
 
 export const Table = () => {
   return (
-    <Paper withBorder radius="md" p="md">
+    <Paper withBorder radius="md" p="xl">
       <Grid justify="space-between">
         <Title order={4}>Users</Title>
         <FormDrawer />
