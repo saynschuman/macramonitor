@@ -1,7 +1,7 @@
 import { MantineReactTable } from 'mantine-react-table';
 import { useMemo } from 'react';
-import { usersMock } from './usersMock';
-import { NativeSelect, Title } from '@mantine/core';
+import { tableMock } from './tableMocks';
+import { Grid, NativeSelect, Paper, Title } from '@mantine/core';
 
 export const Table2 = () => {
   const columns = useMemo(
@@ -49,10 +49,20 @@ export const Table2 = () => {
   );
   return (
     <Paper withBorder radius="md" p="xl">
-      <div>
-        <span style={{ color: 'green', marginRight: 5 }}>Numper of records:</span>
-        <b>134</b>
-      </div>
+      <Grid>
+        <Grid.Col sm={6}>
+          <NativeSelect label="Attetation Clinic Type (UDF)" data={['All', 'Not set', 'Client']} />
+        </Grid.Col>
+        <Grid.Col sm={6}>
+          <NativeSelect label="Attetation Clinic" data={['All', 'Not set', 'Client']} />
+        </Grid.Col>
+        <Grid.Col sm={6}>
+          <NativeSelect label="Scallin factor" data={['0.7', '0.8', '0.9']} />
+        </Grid.Col>
+        <Grid.Col sm={6}>
+          <NativeSelect label="Bonus" data={['0.0', '0.1', '0.2']} />
+        </Grid.Col>
+      </Grid>
       <MantineReactTable
         enableSorting={false}
         enableColumnActions={false}
@@ -61,7 +71,7 @@ export const Table2 = () => {
         enableFullScreenToggle={false}
         columnFilterDisplayMode="popover"
         columns={columns}
-        data={Object.values(usersMock).map((value) => ({
+        data={Object.values(tableMock).map((value) => ({
           tin: value.tin,
           action: value.action,
           udf: value.udf,

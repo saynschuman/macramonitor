@@ -1,7 +1,7 @@
 import { MantineReactTable } from 'mantine-react-table';
 import { useMemo } from 'react';
-import { usersMock } from './usersMock';
-import { NativeSelect, Title } from '@mantine/core';
+import { tableMock } from './tableMocks';
+import { NativeSelect, Paper, Title } from '@mantine/core';
 
 export const Table1 = () => {
   const columns = useMemo(
@@ -48,7 +48,7 @@ export const Table1 = () => {
     []
   );
   return (
-    <>
+    <Paper withBorder radius="md" p="xl">
       <div>
         <span style={{ color: 'green', marginRight: 5 }}>Numper of records:</span>
         <b>134</b>
@@ -61,7 +61,7 @@ export const Table1 = () => {
         enableFullScreenToggle={false}
         columnFilterDisplayMode="popover"
         columns={columns}
-        data={Object.values(usersMock).map((value) => ({
+        data={Object.values(tableMock).map((value) => ({
           tin: value.tin,
           action: value.action,
           udf: value.udf,
@@ -71,6 +71,6 @@ export const Table1 = () => {
         }))}
         mantinePaperProps={{ shadow: '0', withBorder: false }}
       />
-    </>
+    </Paper>
   );
 };

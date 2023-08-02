@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Grid, Paper, Space, Tabs, Title } from '@mantine/core';
 import { Table1 } from './Table1';
+import { Table2 } from './Table2';
 
 export const ActionItems = () => {
   const [activeTab, setActiveTab] = useState('reportingEntities');
@@ -28,12 +29,24 @@ export const ActionItems = () => {
         <Tabs.Panel value="reportingEntities">
           <Table1 />
         </Tabs.Panel>
-        <Tabs.Panel value="componentDetails">Component Details</Tabs.Panel>
-        <Tabs.Panel value="financialSummary">Financial Summary</Tabs.Panel>
-        <Tabs.Panel value="financialDetails">Financial Details</Tabs.Panel>
-        <Tabs.Panel value="tinComparisons">TIN Comparisons</Tabs.Panel>
-        <Tabs.Panel value="tinSummary">TIN Summary</Tabs.Panel>
-        <Tabs.Panel value="qppMismatch">QPP Mismatch</Tabs.Panel>
+        <Tabs.Panel value="componentDetails">
+          <Table2 />
+        </Tabs.Panel>
+        <Tabs.Panel value="financialSummary">
+          <Table1 />
+        </Tabs.Panel>
+        <Tabs.Panel value="financialDetails">
+          <Table2 />
+        </Tabs.Panel>
+        <Tabs.Panel value="tinComparisons">
+          <Table1 />
+        </Tabs.Panel>
+        <Tabs.Panel value="tinSummary">
+          <Table1 />
+        </Tabs.Panel>
+        <Tabs.Panel value="qppMismatch">
+          <Table2 />
+        </Tabs.Panel>
       </Tabs>
     </Paper>
   );
