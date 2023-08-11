@@ -6,27 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <MantineProvider
-      withGlobalStyles
-      withNormalizeCSS
-      theme={{
-        colorScheme: 'light',
-        colors: {
-          blue: [
-            '#e0f0e0',
-            '#bfdfbf',
-            '#a3cea3',
-            '#80bd80',
-            '#66ac66',
-            '#4a9b4a',
-            '#3d8a3d',
-            '#307930',
-            '#216121',
-            '#0a4a0a',
-          ],
-        },
-      }}
-    >
+    <MantineProvider withGlobalStyles withNormalizeCSS>
       <BrowserRouter>
         <App />
       </BrowserRouter>

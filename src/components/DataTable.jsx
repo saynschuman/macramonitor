@@ -1,9 +1,8 @@
 import { MantineReactTable } from 'mantine-react-table';
 import { useMemo } from 'react';
 import { usersMock } from './usersMock';
-import { FormDrawer } from './FormDrawer';
 
-export const UsersTable = () => {
+export const DataTable = () => {
   const columns = useMemo(
     () => [
       {
@@ -26,10 +25,6 @@ export const UsersTable = () => {
         accessorKey: 'state',
         header: 'State',
       },
-      {
-        accessorKey: 'action',
-        header: 'Action',
-      },
     ],
     []
   );
@@ -42,7 +37,6 @@ export const UsersTable = () => {
         address: value.address,
         city: value.city,
         state: value.state,
-        action: <FormDrawer initial={value} />,
       }))}
       mantinePaperProps={{ shadow: '0', withBorder: false }}
     />
